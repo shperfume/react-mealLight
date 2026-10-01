@@ -6,7 +6,8 @@ function Home() {
     const [recs, setRecs] = useState([]);
 
     useEffect(() => {
-        fetch(`${import.meta.env.BASE_URL}db.json`)
+        //fetch(`${import.meta.env.BASE_URL}db.json`)
+        fetch('/db.json')
             .then((reponse) => reponse.json())
             .then((data) => {
                 const meals = data.meals || []; //or 연산자로 넘겨받은 데이터가 있으면 data.meals로 사용 / 없으면 [] 사용.
@@ -32,7 +33,7 @@ function Home() {
                     </p>
                 </div>
 
-                <div className="rerecomArea">
+                <div className="recomArea">
                     <h2>오늘의 PICK</h2>
                     <div className="card-grid">
                         {
