@@ -6,7 +6,7 @@ function Meals() {
     const [meals, setMeals] = useState([]);
 
     useEffect(() => {
-        fetch(`${import.meta.env.BASE_URL} db.json`)
+        fetch(`${import.meta.env.BASE_URL}db.json`)
             //fetch('/db.json')
             .then((reponse) => reponse.json())
             .then((data) => setMeals(data.meals || []))
